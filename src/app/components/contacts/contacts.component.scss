@@ -1,0 +1,134 @@
+/* Color Theme Swatches in Hex */
+$Various-1-hex: #F20732;
+$Various-2-hex: #07038C;
+$Various-3-hex: #0439D9;
+$Various-4-hex: #056CF2;
+$Various-5-hex: #F20505;
+
+/* Color Theme Swatches in RGBA */
+$Various-1-rgba: rgba(242,7,50, 1);
+$Various-2-rgba: rgba(7,2,140, 1);
+$Various-3-rgba: rgba(4,57,216, 1);
+$Various-4-rgba: rgba(4,107,242, 1);
+$Various-5-rgba: rgba(242,4,4, 1);
+
+/* Color Theme Swatches in HSLA */
+$Various-1-hsla: hsla(348, 94, 48, 1);
+$Various-2-hsla: hsla(241, 96, 28, 1);
+$Various-3-hsla: hsla(225, 96, 43, 1);
+$Various-4-hsla: hsla(213, 96, 48, 1);
+$Various-5-hsla: hsla(0, 96, 48, 1);
+
+.form-container {
+    opacity: 0;    
+    font-size: 95%;
+    max-width: 500px;
+    padding: 16px;
+    margin: 10px auto;
+    background: #07038C;
+    box-shadow: 0px 4px 40px rgba(0,0,0,.7);
+    animation: showTouchTransitions;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    //animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.25, 0.35, 0, 1.74);
+    animation-fill-mode: forwards; 
+    animation-delay: 2s; 
+}
+
+.form-container>h1 {
+    background: $Various-3-hex;
+    padding: 20px 0;
+    text-align: center;
+    color: #EEE;
+    text-transform: uppercase;
+    font-family: 'Caveat';
+    font-size: 200%!important;
+}
+
+input,textarea {
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: 1px solid #777;
+    box-sizing: border-box; 
+    font-family: 'Neucha';   
+}
+
+.btn-send {
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+    padding: 20px 0;
+    font-size: 125%;
+    color: #DDD;
+    font-weight: 700;
+    font-family: 'Caveat';
+    outline: none;
+    box-sizing: border-box;
+    border: 0;
+    transition: all .3s ease-in-out;
+    
+    &:hover:not([disabled]) {
+        box-shadow: 0px 4px 16px rgba(0,0,0,.4);
+        cursor: pointer;
+        color: white
+    }
+}
+
+.alert-danger {
+    color: #721C24;
+    background: #F8D7DA;
+    border-color: #F5C6CB;
+    margin-bottom: 5px;
+    font-family: 'Neucha';
+    text-align: right;
+    animation: mymove;
+    animation-duration: 4s;
+    animation-iteration-count: 10;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; 
+    animation-delay: 2s; 
+}
+
+.container-error-message {
+    padding: 3px;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
+  /* Standard syntax */
+@keyframes mymove {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes showTouchTransitions {
+    from {opacity: 0; transform: translateY(-100px);}
+    to {opacity: 1; transform: translateY(75px)}
+}
+  
+  /* Standard syntax */
+@keyframes showTouchTransitions {
+    from {opacity: 0; transform: translateY(-100px);}
+    to {opacity: 1; transform: translateY(75px);}
+}
+
+.credits {
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    color: #555;
+    font-size: .75rem;
+    font-family: 'Neucha'; 
+}

@@ -1,0 +1,43 @@
+<div class="form-container">
+    <h1>Touch Me!</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+        <input type="text" formControlName="displayName" placeholder="Your Name...">
+        <div class="alert-danger" *ngIf="displayName.invalid && (displayName.dirty || displayName.touched)">
+            <div class="container-error-message" *ngIf="displayName.errors.required">
+                Name is required
+            </div>
+            <div class="container-error-message" *ngIf="displayName.errors.minlength">
+                Name must be at least 5 characters long.
+            </div>
+        </div>
+        
+        <input type="email" formControlName="email" placeholder="Your Email...">
+        <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div class="container-error-message" *ngIf="email.errors.required">
+                Email is required
+            </div>
+            <div class="container-error-message" *ngIf="email.errors.minlength">
+                Email must be at least 8 characters long.
+            </div>
+            <div class="container-error-message" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+                Value has to be a valid email address.
+            </div>
+        </div>       
+        
+        <textarea formControlName="msg" rows="5" placeholder="Your Message..."></textarea>
+        <div class="alert-danger" *ngIf="msg.invalid && (msg.dirty || msg.touched)">
+            <div class="container-error-message" *ngIf="msg.errors.required">
+                Message is required
+            </div>
+            <div class="container-error-message" *ngIf="msg.errors.minlength">
+                Message must be at least 10 characters long.
+            </div>
+        </div>
+        
+        <button [@aniBtn]="state" (click)="btnToggle()" type="submit" class="btn-send" [disabled]="!contactForm.valid">SEND NOW!</button>
+    </form>
+</div>
+
+<div class="credits">
+    &copy; {{ year }}, <strong>MEDIASOFT</strong> by Daniel A.
+</div>
